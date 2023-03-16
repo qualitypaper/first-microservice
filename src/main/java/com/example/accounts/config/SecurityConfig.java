@@ -25,7 +25,6 @@ public class SecurityConfig {
                 .csrf().disable()
                 .authorizeHttpRequests(auth -> {
                              auth.requestMatchers("/auth/**").permitAll()
-                            .requestMatchers("/access/token").hasAnyRole()
                             .anyRequest().authenticated();
                 })
                 .sessionManagement()
